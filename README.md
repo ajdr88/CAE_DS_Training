@@ -1,2 +1,2 @@
 # CAE_DS_Training
-ML pipeline using simjb dataset
+ML pipeline using simjeb dataset
