@@ -91,3 +91,19 @@ def compute_intersections(interfaces, part_mesh):
     
     return intersect
 
+def compute_voxel_intersections(surface_mesh, voxel_grid):
+    n = voxel_grid.n_cells
+    cell_percentage = np.zeros(n) 
+
+    volume_0 = voxel_grid.extract_cells(0).extract_surface().triangulate().volume
+    
+    for i in range(n):
+        intersection = voxel_grid.extract_cells(i).extract_surface().triangulate().boolean_intersection(surface_mesh)
+        if len(intersection.points)>0:
+            cell_vol = intersection.volume/volume_0
+            if cell_vol > 1:
+                cell_vol = cell_vol/np.ceil(cell_vol)
+            cell_percentage[i] = cell_vol
+    
+    return cell_percentage
+
