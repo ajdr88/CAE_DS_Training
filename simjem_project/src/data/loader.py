@@ -25,7 +25,7 @@ sim_list = select_files()
 
 #select where to save the raw_data file
 save_dir = select_directory()
-output_file = os.path.join(save_dir, 'TrainingsSet1.csv')
+output_file = os.path.join(save_dir, 'raw_data.csv')
 
 #save selected data into a csv file 
 with open(output_file, mode='w', newline='') as file:

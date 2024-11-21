@@ -34,7 +34,7 @@ def compute_intersections(interfaces, part_mesh):
 
 def filter_data(file_list, interfaces):
      #select directory to save plots
-    save_dir = select_directory()
+    save_dir = select_directory() # save to 'artifacts' folder
     p_1 = pv.Plotter()
     output_list = []
 
