@@ -5,24 +5,14 @@ Autor: A. Delgadillo
 Created: 11/13/2024 
 '''
 
-import numpy as np
-import pyvista as pv
-import matplotlib.pyplot as plt
-import trimesh as tm 
 import tkinter as tk
 from tkinter import filedialog 
 import pandas as pd
 import os
 import seaborn as sns
 import csv
+from utils.utilities import select_directory, select_files
 
-
-def select_files():
-    # manually select files with a pop-up window
-    root = tk.Tk()
-    root.withdraw()  # Hide the main window
-    files = filedialog.askopenfiles()
-    return files
 
 #select surface meshes
 mesh_s = select_files()
@@ -33,8 +23,12 @@ mesh_v = select_files()
 #select csv simulation results
 sim_list = select_files()
 
+#select where to save the raw_data file
+save_dir = select_directory()
+output_file = os.path.join(save_dir, 'TrainingsSet1.csv')
+
 #save selected data into a csv file 
-with open('raw_data.csv', mode='w', newline='') as file:
+with open(output_file, mode='w', newline='') as file:
     ###Should be stored in the artifacts folder
     writer = csv.writer(file)
     row = ['id', 'sur_mesh', 'vol_mesh', 'sim_csv']
