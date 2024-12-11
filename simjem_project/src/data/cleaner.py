@@ -21,7 +21,7 @@ from utils.utilities import select_directory, select_file, select_files
 
 
 def compute_intersections(interfaces, part_mesh):
-    # interfaces: list of paths to interface mesh files
+    # interfaces: list of paths to interface mesh files (obj or stl)
     # part_mesh: pyvista mesh 
     intersect = False
     for interface_mesh in interfaces:

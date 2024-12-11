@@ -1,0 +1,36 @@
+{
+    "data_directories": {
+        "project"      : "",
+        "surface_mesh" : "D:/checkouts/ML-Training/MK_Course/Data/Mesh_s",
+        "volume_mesh"  : "D:/checkouts/ML-Training/MK_Course/Data/Mesh_v",
+        "FEM_results"  : "D:/checkouts/ML-Training/MK_Course/Data/FEM_csv"
+    },
+    "Work_directories": {
+        "artifacts" : "d:/checkouts/ML-Training/MK_Course/code/CAE_DS_Training/simjem_project/artifacts",
+        "logs"      : "d:/checkouts/ML-Training/MK_Course/code/CAE_DS_Training/simjem_project/logs",
+        "config"    :"d:/checkouts/ML-Training/MK_Course/code/CAE_DS_Training/simjem_project/config",
+        "tests"     :"d:/checkouts/ML-Training/MK_Course/code/CAE_DS_Training/simjem_project/tests"
+    },
+    "inputs" : {
+        "cleaner" :{
+            "interface_mesh":{
+                "mesh_1" : "",
+                "mesh_2" : "",
+                "mesh_3" : "",
+                "mesh_4" : "",
+                "mesh_5" : ""
+            },
+            "voxel_bin_count" : "bounding_box"
+        }
+    },
+    "outputs" : {
+        "loader"  : "raw_data.csv",
+        "eda"     : "eda_plots",
+        "cleaner" : {
+            "dir"   : "clean_files",
+            "files" : "filtered_files.csv"
+        },
+        "voxel_bin_count" : "TrainingsSet1.csv"
+    }
+    
+}
